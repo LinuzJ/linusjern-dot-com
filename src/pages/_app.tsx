@@ -7,7 +7,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>Linus Jern</title>
-        <meta name="description" content="Linus Jern Personal website" />
+        <meta name="description" content="Linus Jern Personal Website" />
       </Head>
       <Component {...pageProps} />
     </>
