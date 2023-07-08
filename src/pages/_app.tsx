@@ -9,7 +9,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <title>Linus Jern</title>
         <meta name="description" content="Linus Jern Personal website" />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 };
