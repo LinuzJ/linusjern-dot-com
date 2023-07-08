@@ -1,7 +1,16 @@
 import Layout from "~/components/layout";
 import Image from "next/image";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import type { GetStaticProps } from "next";
+import { promisify } from "util";
+import fs from "fs";
 
-export default function Home() {
+interface Props {
+  intro: MDXRemoteSerializeResult;
+}
+
+export default function Home({ intro }: Props) {
   return (
     <>
       <Layout>
@@ -15,7 +24,24 @@ export default function Home() {
           alt="me"
           style={{ objectFit: "contain", marginBottom: "20px" }}
         />
+        <div className="wrapper">
+          <MDXRemote {...intro} />
+        </div>
       </Layout>
     </>
   );
 }
+export const getStaticProps: GetStaticProps<{
+  intro: MDXRemoteSerializeResult;
+}> = async () => {
+  const rawIntro = await promisify(fs.readFile)(
+    "./src//writing/introduction.mdx"
+  );
+  const intro = await serialize(rawIntro.toString());
+
+  return {
+    props: {
+      intro,
+    },
+  };
+};
