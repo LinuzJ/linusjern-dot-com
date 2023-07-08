@@ -5,17 +5,16 @@
   justify-content: flex-start;
   min-height : 100vh;
   min-width: 100vw;
-  background-image: linear-gradient(to bottom right, #ffffff, #f5e1ca);
+  background-image: linear-gradient(to bottom right, #ffffff, #fee7cc);
 }
 
 .container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  gap: 3rem;
-  padding: 4rem 1rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 640px) {
@@ -36,32 +35,6 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
-.title {
-  font-size: 3rem;
-  line-height: 1;
-  font-weight: 200;
-  letter-spacing: -0.025em;
-  margin: margin 2rem;
-  color: rgb(90, 90, 90);}
-
-@media (min-width: 640px) {
-  .title {
-    font-size: 5rem;
-  }
-}
-
 .introRow {
   display: flex;
   flex-direction: column;
@@ -70,7 +43,6 @@
   width: 80%;
   line-height: 1;
   font-weight: 300;
-  letter-spacing: -0.025em;
   margin: margin 5rem;
   color: rgb(55, 55, 55);
 }
@@ -85,5 +57,26 @@
 @media (min-width: 768px) {
   .introRow {
     width: 50%;
+  }
+}
+
+.imageContainer {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 20px
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .imageContainer {
+    width: 400px;
+    height: 400px;
   }
 }

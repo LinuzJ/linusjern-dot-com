@@ -16,18 +16,20 @@ const componentsForMdx = { a: ExternalLink };
 export default function Home({ intro }: Props) {
   return (
     <Layout>
-      <Image
-        loading="eager"
-        priority={true}
-        quality={70}
-        src="/linus.jpg"
-        width="480"
-        height="428"
-        alt="linus"
-        style={{ objectFit: "contain", marginBottom: "20px" }}
-      />
-      <div className={styles.introRow}>
-        <MDXRemote {...intro} components={componentsForMdx} />
+      <div className={styles.container}>
+        <Image
+          loading="eager"
+          priority={true}
+          quality={70}
+          className={styles.imageContainer}
+          src="/linus.jpg"
+          width="480"
+          height="428"
+          alt="linus"
+        />
+        <div className={styles.introRow}>
+          <MDXRemote {...intro} components={componentsForMdx} />
+        </div>
       </div>
     </Layout>
   );

@@ -1,4 +1,5 @@
 import styles from "../styles/layout.module.css";
+import Title from "./title";
 
 export default function Layout({
   children,
@@ -8,7 +9,7 @@ export default function Layout({
 }) {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>Linus Jern</h1>
+      <Title />
       {children}
     </main>
   );
