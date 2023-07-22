@@ -27,7 +27,12 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       />
       <Head>
         <title>Linus Jern</title>
-        <meta name='description' content='Linus Jern Personal Website' />
+        <link rel='icon' href='/favicon.ico' />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
       </Head>
       <Component {...pageProps} />
     </>
