@@ -4,6 +4,8 @@ import Script from "next/script"
 import "~/styles/globals.css"
 import * as gtag from "~/misc/gtag"
 
+export const site = "Linus Jern"
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
@@ -33,6 +35,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           sizes='180x180'
           href='/apple-touch-icon.png'
         />
+        <meta name='apple-mobile-web-app-title' content={site} />
+        <meta name='application-name' content={site} />
       </Head>
       <Component {...pageProps} />
     </>

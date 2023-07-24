@@ -8,6 +8,7 @@ import { promisify } from "util"
 import fs from "fs"
 import styles from "../styles/layout.module.css"
 import ExternalLink from "~/components/link"
+import MainHead from "~/components/head"
 
 interface Props {
   intro: MDXRemoteSerializeResult
@@ -16,30 +17,33 @@ const componentsForMdx = { a: ExternalLink }
 
 export default function Home({ intro }: Props) {
   return (
-    <Layout>
-      <div className={styles.container}>
-        <Image
-          loading='eager'
-          priority={true}
-          quality={70}
-          className={styles.imageContainer}
-          src='/linus.jpg'
-          width='480'
-          height='428'
-          alt='linus'
-        />
-        <div className={styles.introRow}>
-          <MDXRemote {...intro} components={componentsForMdx} />
+    <>
+      <MainHead />
+      <Layout>
+        <div className={styles.container}>
+          <Image
+            loading='eager'
+            priority={true}
+            quality={70}
+            className={styles.imageContainer}
+            src='/me.jpg'
+            width='480'
+            height='428'
+            alt='linus'
+          />
+          <div className={styles.introRow}>
+            <MDXRemote {...intro} components={componentsForMdx} />
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 export const getStaticProps: GetStaticProps<{
   intro: MDXRemoteSerializeResult
 }> = async () => {
   const rawIntro = await promisify(fs.readFile)(
-    "./src//writing/introduction.mdx"
+    "./src/writing/introduction.mdx"
   )
   const intro = await serialize(rawIntro.toString())
 
