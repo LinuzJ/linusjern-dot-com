@@ -1,6 +1,6 @@
 ## Personal Website
 
-Can be found live [here](www.linusjern.com).
+Can be found live at [www.linusjern.com](www.linusjern.com).
 
 ### Run locally
 
