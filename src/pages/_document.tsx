@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property='og:image'
-            content={"https://linusjern.com/images/me.jpg"}
+            content={"https://linusjern.com/images/linus_jern.jpg"}
           />
           <meta name='og:title' content={site} />
           <meta name='twitter:card' content='summary' />

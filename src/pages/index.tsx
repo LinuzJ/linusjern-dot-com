@@ -26,7 +26,7 @@ export default function Home({ intro }: Props) {
             priority={true}
             quality={70}
             className={styles.imageContainer}
-            src='/me.jpg'
+            src='/linus_jern.jpg'
             width='480'
             height='428'
             alt='linus'
