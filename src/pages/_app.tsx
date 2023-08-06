@@ -13,6 +13,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       />
       <Head>
         <title>Linus Jern</title>
+        <meta name='viewport' content='width=device-width' />
       </Head>
       <Component {...pageProps} />
     </>
