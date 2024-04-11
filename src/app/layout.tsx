@@ -41,7 +41,7 @@ export default function RootLayout({
       <link rel='me' href='https://twitter.com/JernLinus' />
       <link rel='me' href='https://www.linkedin.com/in/linus-jern/' />
       <GoogleAnalytics gaId={GA_TRACKING_ID} />
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

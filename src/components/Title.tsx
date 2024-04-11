@@ -1,10 +1,10 @@
 export default function Title() {
   return (
-    <div className='titleContainer'>
-      <h1 className='title mb-1 text-2xl font-light text-gray-700 sm:mb-2 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl'>
+    <div className='mt-6 flex flex-col items-center'>
+      <h1 className='text-title-big mb-1 text-2xl font-light leading-none tracking-tight sm:text-5xl sm:font-extralight'>
         Linus Jern
       </h1>
-      <h2 className='titleAdditional text-xs font-light text-gray-700 sm:text-base'>
+      <h2 className='text-title-big mb-1 text-xs font-light leading-none tracking-tight sm:text-base sm:font-extralight'>
         Software Engineer/Computer Science student
       </h2>
     </div>
