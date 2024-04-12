@@ -1,4 +1,3 @@
-import MainHead from '@/head';
 import Image from 'next/image';
 import React from 'react';
 import { getPostDataFromFile } from '@/lib/posts';
@@ -8,7 +7,6 @@ export default async function Home() {
   const intro = await getPostData('introduction');
   return (
     <>
-      <MainHead />
       <div className='mb-4 flex w-full flex-col items-center justify-center sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg'>
         <Image
           loading='eager'
