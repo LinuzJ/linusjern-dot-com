@@ -51,10 +51,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: 'public/favicon.ico',
-    apple: '/apple-icon.png',
-  },
 };
 
 export default function RootLayout({
@@ -73,7 +69,6 @@ export default function RootLayout({
       <meta name='apple-mobile-web-app-title' content={site} />
       <meta name='application-name' content={site} />
       <meta name='viewport' content='width=device-width' />
-
 
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link
