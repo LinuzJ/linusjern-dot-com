@@ -1,5 +1,4 @@
 import { getAllPostIds, getPostDataFromFile } from '@/lib/posts';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import { CustomMDX } from '@/components/mdx-remote';
 
 export default async function WritingPage({
@@ -23,24 +22,63 @@ export async function getPostData(id: string) {
   return data.source;
 }
 
-// This function can statically allow nextjs to find all the posts that you
-// have made, and statically generate them
+// App router version to statically render all possible paths
 export async function generateStaticParams() {
   const postsIds = await getAllPostIds();
 
   return postsIds.map((id) => ({ id }));
 }
 
-// Set the title of the page to be the post title, note that we no longer use
-// e.g. next/head in app dir, and this can be async just like the server
-// component
-// export async function generateMetadata({
-//   params: { id },
-// }: {
-//   params: { id: string };
-// }) {
-//   const { title } = await getPostById(id);
-//   return {
-//     title,
-//   };
-// }
+// Render metadata
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
+  const { title, description } = await getPostDataFromFile(id);
+  return {
+    title: `Linus Jern Blog Post: ${id}`,
+    generator: 'Linus Jern',
+    applicationName: `Linus Jern Personal Page`,
+    keywords: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Linus Jern',
+      'Linus',
+      'Jern',
+      'Blog',
+    ],
+    authors: [{ name: 'Linus Jern', url: 'https://www.linusjern.com' }],
+    creator: 'Linus Jern',
+    publisher: 'Linus Jern',
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    twitter: {
+      card: 'summary',
+      title: `Linus Jern Blog Post: ${id}`,
+      description,
+      creator: '@JernLinus',
+    },
+    openGraph: {
+      title: `Linus Jern Blog Post: ${id}`,
+      description,
+      url: `https://www.linusjern.com/writing/${id}`,
+      siteName: 'Linus Jern Personal Page',
+      images: [
+        {
+          url: 'https://linusjern.com/images/linus_jern.jpg',
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
+    icons: {
+      icon: '/favicon.ico',
+      apple: '/apple-icon.png',
+    },
+  };
+}
