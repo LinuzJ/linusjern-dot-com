@@ -51,10 +51,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
-  },
 };
 
 export default function RootLayout({
@@ -74,6 +70,12 @@ export default function RootLayout({
       <meta name='application-name' content={site} />
       <meta name='viewport' content='width=device-width' />
 
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link
+        rel='apple-touch-icon'
+        sizes='180x180'
+        href='/apple-touch-icon.png'
+      />
       <link rel='me' href='https://github.com/LinuzJ' />
       <link rel='me' href='https://twitter.com/JernLinus' />
       <link rel='me' href='https://www.linkedin.com/in/linus-jern/' />
