@@ -26,7 +26,7 @@ export default async function Home() {
   );
 }
 
-export async function getPostData(id: string) {
+async function getPostData(id: string) {
   const data = await getPostDataFromFile(id);
 
   return data.source;

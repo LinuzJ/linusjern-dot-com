@@ -16,7 +16,7 @@ export default async function WritingPage({
   );
 }
 
-export async function getPostData(id: string) {
+async function getPostData(id: string) {
   const data = await getPostDataFromFile(id);
 
   return data.source;

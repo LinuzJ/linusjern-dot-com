@@ -7,7 +7,6 @@ import Title from '@/components/Title';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const site = 'Linus Jern';
 
 export const metadata: Metadata = {
   title: `Linus Jern Personal Page`,
@@ -64,10 +63,10 @@ export default function RootLayout({
         property='og:image'
         content={'https://linusjern.com/images/linus_jern.jpg'}
       />
-      <meta name='og:title' content={site} />
+      <meta name='og:title' content="Linus Jern" />
       <meta name='twitter:card' content='summary' />
-      <meta name='apple-mobile-web-app-title' content={site} />
-      <meta name='application-name' content={site} />
+      <meta name='apple-mobile-web-app-title' content="Linus Jern" />
+      <meta name='application-name' content="Linus Jern" />
       <meta name='viewport' content='width=device-width' />
 
       <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -88,4 +87,3 @@ export default function RootLayout({
   );
 }
 
-export { site };
