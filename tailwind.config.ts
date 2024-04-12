@@ -12,6 +12,8 @@ const config: Config = {
         'white-bg': '#ffffff',
         'yellow-bg': '#fee7cc',
         'title-big': '#666666',
+        'link-color': '#0645AD',
+        'text-color': '#373737',
       },
     },
   },
