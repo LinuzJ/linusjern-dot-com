@@ -4,6 +4,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import NavBar from '@/components/NavBar';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className='system-ui m-0 box-border flex min-h-full min-w-full flex-col items-center justify-start overflow-scroll bg-yellow-bg p-0 pb-10 font-sans'>
         <NavBar />
         <div>{children}</div>
+        <SpeedInsights />
       </body>
     </html>
   );
