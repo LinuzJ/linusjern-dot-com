@@ -23,6 +23,12 @@ export async function getAllPostIds() {
   );
 }
 
+export async function getAllPostData(): Promise<IPost[]> {
+  const ids = await getAllPostIds();
+  const data = ids.map(async (id) => getPostDataFromFile(id));
+  return Promise.all(data);
+}
+
 export async function getPostDataFromFile(id: string): Promise<IPost> {
   const p = firstMatchingExt(id, ['md', 'mdx']);
   const raw = await promisify(fs.readFile)(p);
@@ -32,6 +38,7 @@ export async function getPostDataFromFile(id: string): Promise<IPost> {
   return {
     id,
     title: data.title,
+    description: data.title,
     date: data.date,
     source: content,
     draft: !!data.draft,

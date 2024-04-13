@@ -9,8 +9,9 @@ export default async function WritingPage({
   const post = await getPostData(id);
   return (
     <main>
-      <article>
-        <CustomMDX source={post} />
+      <article className='mt-14 flex flex-col items-center pl-5 pr-5 font-light leading-none text-text-color sm:max-w-[60rem]'>
+        <CustomMDX source={post.source} />
+        <div className='mt-10'>Published {post.date}</div>
       </article>
     </main>
   );
@@ -19,7 +20,7 @@ export default async function WritingPage({
 async function getPostData(id: string) {
   const data = await getPostDataFromFile(id);
 
-  return data.source;
+  return data;
 }
 
 // App router version to statically render all possible paths
@@ -37,9 +38,9 @@ export async function generateMetadata({
 }) {
   const { title, description } = await getPostDataFromFile(id);
   return {
-    title: `Linus Jern Blog Post: ${id}`,
+    title: `Linus Jern - ${id}`,
     generator: 'Linus Jern',
-    applicationName: `Linus Jern Personal Page`,
+    applicationName: `Linus Jern`,
     keywords: [
       'Next.js',
       'React',
@@ -59,15 +60,15 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary',
-      title: `Linus Jern Blog Post: ${id}`,
+      title: `Linus Jern - ${id}`,
       description,
       creator: '@JernLinus',
     },
     openGraph: {
-      title: `Linus Jern Blog Post: ${id}`,
+      title: `Linus Jern - ${id}`,
       description,
       url: `https://www.linusjern.com/writing/${id}`,
-      siteName: 'Linus Jern Personal Page',
+      siteName: 'Linus Jern',
       images: [
         {
           url: 'https://linusjern.com/images/linus_jern.jpg',
@@ -75,10 +76,6 @@ export async function generateMetadata({
           height: 600,
         },
       ],
-    },
-    icons: {
-      icon: '/favicon.ico',
-      apple: '/apple-icon.png',
     },
   };
 }
