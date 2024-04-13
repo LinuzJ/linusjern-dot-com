@@ -14,6 +14,7 @@ const config: Config = {
         'title-big': '#666666',
         'link-color': '#0645AD',
         'text-color': '#373737',
+        'nav-bar-links': '#32435c',
       },
     },
   },
