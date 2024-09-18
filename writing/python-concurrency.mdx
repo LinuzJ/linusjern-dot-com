@@ -1,0 +1,38 @@
+---
+title: Concurrency in Python - What does it really mean?
+date: '28-07-2024'
+description: Deep dive into concurrency in Python, how and where we can and should use it.
+---
+
+# Concurrency in Python - What does it really mean?
+
+During my internship at Google this summer, I wrote some Python code proudly thinking I improved the performance of my service.
+A couple of days later I spoke with another intern, who also had experimented with some “concurrent” Python in his project, about this “optimization” of mine.
+When later benchmarking my incredible speedup, I noticed I had achieved an impressive speedup of a whopping 0s (not exactly 0s but you get my point), making me slightly less proud of my concurrent Python code.
+What was going on?
+
+This led me to go down a rabbit whole of exploring the commonly used libraries providing concurrency APIs in Python, how they work, and their nuances.
+While talking with some other people I also realised that there is quite a lot of confusion on how these work, so I thought I’d write a blog post exploring concurrency in Python to clear my mind and maybe helt someone else as well!
+
+## Concurrency?
+
+First up some basics: what even is _concurrency?_ Good thing we have Wikipedia, right?
+Wikipedia informs us that “_concurrency is the ability of different parts or units of a program, algorithm or problem to be executed out-of-order or in partial order, without affecting the outcome_”.
+However precise this may be , it’s not the most “explain it to me like I’m five years old”-friendly answer.
+So let me rephrase into a more “five year old”-friendly definition: “Concurrency is like having multiple people working on different things at the same time”.
+
+“But wait, isin’t that _parallelism_?” I hear someone ask.
+Well, this is where a lot of confusion is originated, so read carefully now.
+Concurrency means managing multiple tasks at once, while parallelism means running multiple tasks _simultaneously._
+This essentially means that parallelism is a subset of concurrency.
+If something is execution in a parallel manner, it’s concurrent.
+However, if something is executing in a concurrent manner, it’s not necessarily parallel.
+
+Let’s try to simplify this distinction with an example in the form of a little: imagine two circuses, Circus Conccy and Circus Paralello, with a juggling performance.
+At Circus Conccy there is only one juggler juggling 5 sets of balls at once, quickly moving between the sets in order to continue the quite frankly, unbelievable, juggling performance.
+Over at Circus Paralello, however, power is clearly in the numbers.
+There we also find 5 sets of juggling balls in the air at the same time.
+But instead of one juggler, there are 5, each juggling only one set of balls at a time.
+As you probably should have understood by now, Circus Conccy is juggling concurrently, while Circus Parallello is juggling in parallel.
+
+So what does this have to do with Python?
