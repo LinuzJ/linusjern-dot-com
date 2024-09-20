@@ -11,7 +11,7 @@ export interface IPost {
   title: string;
   date: string;
   source: string;
-  draft: boolean;
+  published: boolean;
   description?: string;
 }
 
@@ -41,7 +41,7 @@ export async function getPostDataFromFile(id: string): Promise<IPost> {
     description: data.title,
     date: data.date,
     source: content,
-    draft: !!data.draft,
+    published: !!data.published,
   };
 }
 

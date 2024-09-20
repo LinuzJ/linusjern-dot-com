@@ -7,7 +7,7 @@ export default async function Home() {
     <>
       <div>
         {posts.map((post) => {
-          if (post.id !== 'introduction') {
+          if (post.id !== 'introduction' && post.published) {
             return (
               <PostCard
                 key={post.id}
