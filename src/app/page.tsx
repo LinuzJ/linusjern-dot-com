@@ -18,7 +18,7 @@ export default async function Home() {
           height='428'
           alt='Linus Jern - The Author'
         />
-        <div className='items-left flex h-[400px] w-4/5 flex-col justify-between font-light leading-none text-text-color sm:w-3/5 md:w-1/2'>
+        <div className='items-left flex h-[400px] w-4/5 flex-col justify-between space-y-4 font-light leading-relaxed text-text-color sm:w-3/5 md:w-1/2'>
           <CustomMDX source={intro} />
         </div>
       </div>
