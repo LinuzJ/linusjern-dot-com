@@ -1,11 +1,14 @@
 import { getAllPostIds, getPostDataFromFile } from '@/lib/posts';
 import { CustomMDX } from '@/components/mdx-remote';
 
+type WritingPageParams = { id: string };
+
 export default async function WritingPage({
-  params: { id },
+  params,
 }: {
-  params: { id: string };
+  params: Promise<WritingPageParams>;
 }) {
+  const { id } = await params;
   const post = await getPostData(id);
   return (
     <main>
@@ -32,10 +35,11 @@ export async function generateStaticParams() {
 
 // Render metadata
 export async function generateMetadata({
-  params: { id },
+  params,
 }: {
-  params: { id: string };
+  params: Promise<WritingPageParams>;
 }) {
+  const { id } = await params;
   const { title, description } = await getPostDataFromFile(id);
   return {
     title: `Linus Jern - ${id}`,
