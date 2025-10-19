@@ -28,7 +28,7 @@ const components = {
       {props.children}
     </p>
   ),
-  Image: (props) => <Image {...props} />,
+  Image: ({ alt = '', ...props }) => <Image alt={alt} {...props} />,
 };
 
 export function CustomMDX(props) {
