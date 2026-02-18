@@ -9,7 +9,7 @@ export default function Title() {
         </h1>
       </Link>
       <h2 className='mb-1 hidden text-xs font-light leading-none tracking-tight text-title-big sm:block sm:w-full sm:max-w-full sm:text-base sm:font-extralight'>
-        Software Engineer/Computer Science student
+        Software Engineer
       </h2>
     </div>
   );
