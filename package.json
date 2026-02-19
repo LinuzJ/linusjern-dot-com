@@ -20,7 +20,7 @@
     "eslint-config-prettier": "^9.1.0",
     "gray-matter": "^4.0.3",
     "next": "^15.5.9",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "react": "^19.2.0",
