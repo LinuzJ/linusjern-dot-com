@@ -19,7 +19,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "eslint-config-prettier": "^9.1.0",
     "gray-matter": "^4.0.3",
-    "next": "^15.5.6",
+    "next": "15.5.9",
     "next-mdx-remote": "^5.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
